@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookmarker</title>
+
+  <link rel="icon" href="./logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/all.min.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+
+  <!--  -->
+
+  <div class="container  mt-5">
+    <h1 class="mb-5 mx-auto">Bookmarker</h1>
+    <hr>
+    <h3 class="text-center mb-5 mt-4">
+        <i class="fa-solid fa-bookmark"></i>
+        Bookmark your favorite sites 
+        <i class="fa-solid fa-bookmark"></i>
+    </h3>
+    <div class="myform" id="myForm">
+      <div class="mb-4">
+        <label for="formInput1" class="form-label fw-bold"><i class="fa-solid fa-book-bookmark me-2"></i>Site Name</label>
+        <input type="text" class="form-control" id="formInput1" placeholder="Bookmark Name"  >
+      </div>
+      <div class="mb-4">
+        <label for="formInput2" class="form-label fw-bold"><i class="fa-solid fa-link me-2"></i>Site URL</label>
+        <input type="url" class="form-control" id="formInput2" placeholder="website url"  >
+      </div>
+      <div class="button text-center">
+      <button type="submit"   id="add" onclick="add()" class="btn btn-lg sub text-white ">Base class</button>
+      <button onclick="add();" id="updateProduct" style="display: none;" class="btn btn-warning btn-lg mt-3 text-center "> Update Product <i class="fa-solid fa-pen ms-1"></i></button>
+      </div>
+    </div>
+    <hr>
+    <table class="table">
+    
+      <thead>
+        <tr>
+          <th class="text-center">Index</th>
+          <th class="text-center">Website Name</th>
+          <th class="text-center">Visit</th>
+          <th class="text-center">Delete</th>
+          <th class="text-center">Update</th>
+        </tr>
+      </thead>
+      <tbody id="websites">
+      </tbody>
+      
+    </table>
+    
+    <div class="mybuttun ">
+      <button id="deleteAll" onclick="deleteAlle()" type="button" class="btn btn-danger d-none"><i class="fa-solid fa-trash-can pe-1"></i> Delete All</button>
+    </div>
+  </div>
+
+
+  <div  class="mybox d-none bg-dark bg-opacity-50 position-absolute end-0 top-0 w-100 h-100 z-2 d-flex justify-content-center align-items-center">
+    <div class="boxcontent   bg-white p-3 rounded-3">
+      <div class="header d-flex justify-content-between align-items-center px-3">
+        <div class="circles">
+          <span class="rounded-circle me-2 d-inline-block bg-danger"></span>
+          <span class="rounded-circle me-2 d-inline-block bg-warning"></span>
+          <span class="rounded-circle me-2 d-inline-block bg-success"></span>
+        </div>
+        <button onclick="closebttn()" class="btn border-0" id="closeBtn">
+          <i class="fa-solid fa-xmark close fs-3"></i>
+        </button>
+      </div>
+      <h5 class="p-3">Site Name or Url is not valid, Please follow the rules below :</h5>
+      <ol class="rules list-unstyled m-1 ps-4">
+        <li class="">
+          <i class="fa-regular fa-circle-right p-2 text-danger "></i>Site name must contain at least 3 characters
+        </li>
+        <li>
+          <i class="fa-regular fa-circle-right p-2 text-danger"></i>Site URL must be a
+          valid one
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <script src="./JS/bootstrap.bundle.min.js"></script>
+  <script src="./JS/main.js"></script>
+</body>
+</html>
