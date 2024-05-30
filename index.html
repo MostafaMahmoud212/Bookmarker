@@ -41,7 +41,13 @@
       <button type="submit"   id="add" onclick="add()" class="btn btn-lg sub text-white ">Base class</button>
       <button onclick="add();" id="updateProduct" style="display: none;" class="btn btn-warning btn-lg mt-3 text-center "> Update Product <i class="fa-solid fa-pen ms-1"></i></button>
       </div>
+
     </div>
+    <div class="my-4">
+      <label for="search" class="form-label fw-bold">Serch</label>
+      <input onkeyup = "searchElement(this.value);" type="text" id="Search" class="form-control" placeholder="Search..." />
+    </div>
+    <div class="rowe" id="productRow"></div>
     <hr>
     <table class="table">
     

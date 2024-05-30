@@ -114,8 +114,33 @@ var myInputs = document.querySelectorAll(".myform input");
 
 for( var i = 0 ; i < myInputs.length ; i++ ){
   myInputs[i].addEventListener("input", function(e){
-  validateinput(e.target.id ,e.target.value);
+  validateinput(e.target.id, e.target.value);
   })
+}
+
+
+function searchElement( term ) {
+
+  var serchValue = '';
+
+  for( var i = 0; i < mylist.length; i++ ) {
+
+    if( mylist[i].webname.toLowerCase().includes( term.toLocaleLowerCase()) == true){
+
+      serchValue += `
+      <tr class = "text-center ">
+        <th scope="row">${i + 1}</th>
+        <td>${mylist[i].webname}</td>
+        <td><button  type="button" class="btn btn-success"> <i class="fa-solid fa-eye pe-1"></i>  <a href="${mylist[i].myurl}" target="_blank" class="text-light text-decoration-none ">visit</a></button></td>
+        <td><button onclick="deleterow(${i})" type="button" class="btn btn-danger"><i class="fa-solid fa-trash-can pe-1"></i> Delete</button></td>
+        <td><button onclick="updateElment(${i})" class="btn btn-warning">Update <i class="fa-solid fa-pen ms-1"></i></button></td>
+      </tr>
+      `
+    }
+  }
+
+  document.getElementById('websites').innerHTML = serchValue;
+
 }
 
 
